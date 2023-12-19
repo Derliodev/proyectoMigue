@@ -1,7 +1,20 @@
+#include <Blynk.h>
+#include <BlynkSimpleEsp32.h>
+
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiServer.h>
+#include <WiFiUdp.h>
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+#include <WiFi.h>
+
+#define BLYNK_TEMPLATE_ID "TMPL29gLwY4ZO"
+#define BLYNK_TEMPLATE_NAME "Quickstart Template"
+#define BLYNK_AUTH_TOKEN "ndzqLRNVdkE0sDO8wQZAAoh7kP-gPElj"
 
 // used pins
 // sda, scl -> 21 , 22
