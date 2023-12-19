@@ -16,6 +16,10 @@
 #define BLYNK_TEMPLATE_NAME "Quickstart Template"
 #define BLYNK_AUTH_TOKEN "ndzqLRNVdkE0sDO8wQZAAoh7kP-gPElj"
 
+// Parametros de coneccion
+char ssid[] = "Tu Red";
+char pass[] = "Contraseña";
+
 // used pins
 // sda, scl -> 21 , 22
 const uint8_t tdsPin = 32;
@@ -91,9 +95,12 @@ void setup(){
     lcd.init();
     lcdWelcomeMessage();
     delay(1000);
+    Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
 }
 
 void loop(){
+    Blynk.run();
+    
     // tds
     sampleTDS();
     readAndCheckTds();
@@ -115,6 +122,8 @@ void loop(){
         lcdShowPreviousMillis = currentMillis;
         showParametersOnLcd();
     }
+
+    // 
 }
 
 
